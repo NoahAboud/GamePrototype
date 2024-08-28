@@ -14,11 +14,16 @@ public class playercontroller : MonoBehaviour
     bool isGrounded;
     public projectilebehaviour projectileprefab;
     public Transform launchOFFset;
-    private bool facingLeft = true;
+    public Transform launchOFFset2;
+    private bool facingRight = true;
+    private SpriteRenderer spriteRenderer;
+
+    public float xVelocity;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -28,16 +33,30 @@ public class playercontroller : MonoBehaviour
         {
             Jump();
         }
-       
+
+        if (Input.GetKeyDown(KeyCode.K))
         {
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                Instantiate(projectileprefab, launchOFFset.position, transform.rotation);
-            }
+            Instantiate(projectileprefab, launchOFFset.position, transform.rotation);
         }
-       
+
+
+        xVelocity = rb.velocity.x;
+
+        // != not equal to
+        // == equal to
+
+        if (rb.velocity.x != 0)
+        {
+            spriteRenderer.flipX = rb.velocity.x < 0f;
+        }
+
+
     }
 
+    void flip()
+    {
+
+    }
     private void FixedUpdate()
     {
         Vector3 newPosition = playerInput.normalized * speed * Time.deltaTime;
