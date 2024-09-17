@@ -39,7 +39,7 @@ public class playercontroller : MonoBehaviour
             Instantiate(projectileprefab, launchOFFset.position, transform.rotation);
         }
 
-
+       
         xVelocity = rb.velocity.x;
 
         // != not equal to
