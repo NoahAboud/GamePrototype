@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossDamage : MonoBehaviour
 {
-    public Health playerHealth;
+    public PlayerHealth playerHealth;
     public int damage = 1;
     // Start is called before the first frame update
     void Start()

@@ -36,7 +36,14 @@ public class playercontroller : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.K))
         {
-            Instantiate(projectileprefab, launchOFFset.position, transform.rotation);
+            if (spriteRenderer.flipX == true)
+            {
+                Instantiate(projectileprefab, launchOFFset.position, launchOFFset.rotation);
+            }
+            else
+            {
+                Instantiate(projectileprefab, launchOFFset2.position, launchOFFset2.rotation);
+            }
         }
 
        

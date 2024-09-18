@@ -424,13 +424,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155896487}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.94, y: 0.39, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalPosition: {x: 1.9000002, y: 0.38999987, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1488171384}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
 --- !u!1 &266512726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,7 +1340,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1417851238}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: quit
+        m_MethodName: controlsMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1909,7 +1909,7 @@ GameObject:
   - component: {fileID: 1488171383}
   - component: {fileID: 1488171382}
   - component: {fileID: 1488171386}
-  - component: {fileID: 1488171385}
+  - component: {fileID: 1488171387}
   - component: {fileID: 1488171381}
   - component: {fileID: 1488171380}
   m_Layer: 0
@@ -2007,7 +2007,7 @@ MonoBehaviour:
   jumpForce: 990
   projectileprefab: {fileID: 493004672833111034, guid: 1e48dae68202bcb448738a171e27939c, type: 3}
   launchOFFset: {fileID: 491514414}
-  launchOFFset2: {fileID: 0}
+  launchOFFset2: {fileID: 155896488}
   xVelocity: 0
 --- !u!212 &1488171383
 SpriteRenderer:
@@ -2078,23 +2078,6 @@ Transform:
   - {fileID: 155896488}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1488171385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488171379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa23694eba2ae894e9873ffdc141a140, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 3
-  health: 0
-  playerSr: {fileID: 1488171383}
-  playerController: {fileID: 1488171382}
-  gameManager: {fileID: 1417851238}
 --- !u!114 &1488171386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2115,7 +2098,23 @@ MonoBehaviour:
   - {fileID: 787474376}
   - {fileID: 1107508871}
   - {fileID: 1401691520}
-  playerHealth: {fileID: 1488171385}
+  playerHealth: {fileID: 1488171387}
+--- !u!114 &1488171387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488171379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa23694eba2ae894e9873ffdc141a140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  health: 0
+  gameManager: {fileID: 1417851238}
+  isDead: 0
 --- !u!1 &1653526768
 GameObject:
   m_ObjectHideFlags: 0
@@ -2198,7 +2197,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1653526771}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1653526771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2254,7 +2265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2102934085
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2275,7 +2286,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -3.149994}
+  m_AnchoredPosition: {x: 0, y: -3.1500244}
   m_SizeDelta: {x: 178.96, y: 100.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2102934086
@@ -2462,7 +2473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa55e8422b81d454183749880678f4ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rock: {fileID: 5367712964212830790, guid: fa86f0a3931ea7b41ab56f4a17f70720, type: 3}
+  Rock: {fileID: 2927205551509698022, guid: fa86f0a3931ea7b41ab56f4a17f70720, type: 3}
   rockPos: {fileID: 331071610}
   timer: 0
 --- !u!114 &2104579215
@@ -2477,7 +2488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5dd9f2ea4d8e96499db504f596c0dde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 1488171385}
+  playerHealth: {fileID: 1488171387}
   damage: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -2486,9 +2497,9 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1054633523}
-  - {fileID: 1488171384}
   - {fileID: 2104579213}
   - {fileID: 104147012}
   - {fileID: 946032677}
   - {fileID: 12200678}
   - {fileID: 1417851239}
+  - {fileID: 1488171384}

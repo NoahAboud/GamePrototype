@@ -8,6 +8,8 @@ public class BossRockScript : MonoBehaviour
     private Rigidbody2D rb;
     public float force;
     private float timer;
+    public PlayerHealth player;
+    public int damage = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,9 +36,17 @@ public class BossRockScript : MonoBehaviour
     {
        if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<Health>().health -= 1;
+          Debug.Log("HitPlayer");
+          
+
+           PlayerHealth pHealth = other.gameObject.GetComponent<PlayerHealth>();
+           pHealth.TakeDamage(damage);
+
             Destroy(gameObject);
         }
-    }
+
+
     
+    }
+   
 }

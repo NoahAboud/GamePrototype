@@ -12,7 +12,7 @@ public class HeartDisplay : MonoBehaviour
     public Sprite fullHeart;
     public Image[] hearts;
 
-    public Health playerHealth;
+    public PlayerHealth playerHealth;
     // Start is called before the first frame update
     void Start()
     {

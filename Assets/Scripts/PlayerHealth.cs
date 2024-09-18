@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 3;
     public int health;
 
-    public SpriteRenderer playerSr;
-    public playercontroller playerController;
+    
     public GameManager gameManager;
-    private bool isDead;
+    [SerializeField]private bool isDead;
     void Start()
     {
        health = maxHealth;
