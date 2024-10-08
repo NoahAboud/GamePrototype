@@ -18,6 +18,10 @@ public class projectilebehaviour : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.collider.gameObject.tag == "Boss")
+        {
+            collision.gameObject.GetComponent<BossDamage>().TakeDamage(1);
+        }
         Destroy(gameObject);
     }
 }

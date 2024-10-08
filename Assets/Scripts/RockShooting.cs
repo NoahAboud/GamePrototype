@@ -6,6 +6,8 @@ public class RockShooting : MonoBehaviour
 {
     public GameObject Rock;
     public Transform rockPos;
+    public bool gameOver;
+    public PlayerHealth playerHealth;
 
     public float timer;
     // Start is called before the first frame update
@@ -25,6 +27,7 @@ public class RockShooting : MonoBehaviour
             timer = 0;
             shoot();
         }
+        
     }
 
     void shoot()
