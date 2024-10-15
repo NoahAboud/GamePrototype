@@ -965,7 +965,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 200
+  m_MaxValue: 100
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
@@ -2320,7 +2320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 400
-  jumpForce: 990
+  jumpForce: 1200
   projectileprefab: {fileID: 7900375383878309811, guid: 506cb9d6ce8340040ac541028629bfac, type: 3}
   launchOFFset: {fileID: 491514414}
   launchOFFset2: {fileID: 155896488}
@@ -2845,7 +2845,7 @@ MonoBehaviour:
   playerHealth: {fileID: 1488171387}
   damage: 1
   healthBar: {fileID: 488596759}
-  health: 200
+  health: 100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
