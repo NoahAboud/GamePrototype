@@ -34,7 +34,7 @@ public class playercontroller : MonoBehaviour
             Jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetMouseButtonDown(0))
         {
             if (spriteRenderer.flipX == true)
             {
