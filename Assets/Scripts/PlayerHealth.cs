@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 3;
     public int health;
+    public Animator animator;
 
     
     public GameManager gameManager;
@@ -13,6 +14,12 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
        health = maxHealth;
+       
+    }
+
+    private void Update()
+    {
+       
     }
 
     public void TakeDamage(int amount)
@@ -21,9 +28,10 @@ public class PlayerHealth : MonoBehaviour
         if(health <= 0 && !isDead)
         {
             isDead = true;
-            gameObject.SetActive(false);   
+             
             gameManager.gameOver();
             Debug.Log("Player is Dead");
+            animator.SetBool("IsDead", true);
         }
     }
 

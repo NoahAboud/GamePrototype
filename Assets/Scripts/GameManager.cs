@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject gameOverUI;
+    public GameObject boss;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,10 @@ public class GameManager : MonoBehaviour
     public void gameOver()
     {
         gameOverUI.SetActive(true);
+
+        boss.GetComponent<RockShooting>().enabled = false;
+        player.GetComponent<playercontroller>().enabled = false;
+
     }
     
     public void restart()

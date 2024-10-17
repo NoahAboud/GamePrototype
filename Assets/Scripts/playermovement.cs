@@ -17,6 +17,7 @@ public class playercontroller : MonoBehaviour
     public Transform launchOFFset2;
     private bool facingRight = true;
     private SpriteRenderer spriteRenderer;
+    public Animator animator;
 
     public float xVelocity;
 
@@ -28,7 +29,10 @@ public class playercontroller : MonoBehaviour
 
     void Update()
     {
+        animator.SetFloat("Speed", Mathf.Abs(xVelocity));
+
         playerInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0);
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
@@ -84,6 +88,7 @@ public class playercontroller : MonoBehaviour
         if (collision.collider.CompareTag("Ground"))
         {
             isGrounded = true;
+            animator.SetBool("IsJumping", false);
         }
     }
 
@@ -92,6 +97,7 @@ public class playercontroller : MonoBehaviour
         if (collision.collider.CompareTag("Ground"))
         {
             isGrounded = false;
+            animator.SetBool("IsJumping", true);
         }
     }
 
