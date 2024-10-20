@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 3;
     public int health;
+    public Animator bossAnimator;
     public Animator animator;
 
     
@@ -28,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
         if(health <= 0 && !isDead)
         {
             isDead = true;
-             
+            bossAnimator.SetBool("IsPlayerAlive",  true);
             gameManager.gameOver();
             Debug.Log("Player is Dead");
             animator.SetBool("IsDead", true);

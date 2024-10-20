@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverUI;
     public GameObject boss;
     public GameObject player;
+    public GameObject victoryScreenUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,12 @@ public class GameManager : MonoBehaviour
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
+        if (victoryScreenUI.activeInHierarchy)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+
     }
     public void gameOver()
     {
@@ -29,8 +36,18 @@ public class GameManager : MonoBehaviour
 
         boss.GetComponent<RockShooting>().enabled = false;
         player.GetComponent<playercontroller>().enabled = false;
+       
 
     }
+
+    public void victoryScreen()
+    {
+        victoryScreenUI.SetActive(true);
+
+        boss.GetComponent<RockShooting>().enabled = false;
+        player.GetComponent<playercontroller>().enabled = false;
+    }
+
     
     public void restart()
     {
@@ -44,4 +61,5 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+ 
 }

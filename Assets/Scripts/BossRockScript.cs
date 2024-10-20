@@ -25,7 +25,7 @@ public class BossRockScript : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer > 4)
+        if(timer > 6)
         {
             Destroy(gameObject);
         }
