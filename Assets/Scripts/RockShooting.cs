@@ -8,12 +8,13 @@ public class RockShooting : MonoBehaviour
     public Transform rockPos;
     public bool gameOver;
     public PlayerHealth playerHealth;
+    AudioManager audioManager;
 
     public float timer;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -33,5 +34,7 @@ public class RockShooting : MonoBehaviour
     void shoot()
     {
         Instantiate(Rock, rockPos.position, Quaternion.identity);
+        audioManager.PlaySFX(audioManager.Summon);
+
     }
 }

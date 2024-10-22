@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-
+    public AudioManager audioManager;
     public Transform player;
 
     public bool isFlipped = false;
+
+    private void Start()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<AudioManager>();
+    }
 
     public void LookAtPlayer()
     {
@@ -29,5 +34,9 @@ public class Boss : MonoBehaviour
 
 
 
+    }
+    void SwordSwing()
+    {
+        audioManager.PlaySFX(audioManager.Sword);
     }
 }

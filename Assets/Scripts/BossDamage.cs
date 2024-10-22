@@ -12,18 +12,23 @@ public class BossDamage : MonoBehaviour
     public GameObject boss;
     public GameObject victoryScreenUI;
     public GameObject player;
-
+    public AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         healthBar.value = health;
+
+        if (health == 100)
+        {
+            audioManager.PlaySFX(audioManager.Explosion);
+        }
     }
   
     public void TakeDamage(int amount)
@@ -33,7 +38,10 @@ public class BossDamage : MonoBehaviour
         {
             GetComponent<Animator>().SetBool("Second Phase", true);
             boss.GetComponent<RockShooting>().enabled = false;
+         
         }
+
+   
 
 
 

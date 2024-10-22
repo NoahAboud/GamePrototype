@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class playercontroller : MonoBehaviour
@@ -18,6 +16,7 @@ public class playercontroller : MonoBehaviour
     private bool facingRight = true;
     private SpriteRenderer spriteRenderer;
     public Animator animator;
+    AudioManager audioManager;
 
     public float xVelocity;
 
@@ -25,6 +24,7 @@ public class playercontroller : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<AudioManager>();
     }
 
     void Update()
@@ -43,10 +43,12 @@ public class playercontroller : MonoBehaviour
             if (spriteRenderer.flipX == true)
             {
                 Instantiate(projectileprefab, launchOFFset.position, launchOFFset.rotation);
+                audioManager.PlaySFX(audioManager.Gun);
             }
             else
             {
                 Instantiate(projectileprefab, launchOFFset2.position, launchOFFset2.rotation);
+                audioManager.PlaySFX(audioManager.Gun);
             }
         }
 
